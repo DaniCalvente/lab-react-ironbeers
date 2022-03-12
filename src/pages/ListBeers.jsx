@@ -1,8 +1,12 @@
 import React from 'react'
+import Header from '../components/Header'
 
 function ListBeers() {
   return (
-    <div>ListBeers</div>
+    <div>
+    <Header/>
+    <h2>All Beers</h2>
+    </div>
   )
 }
 

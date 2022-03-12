@@ -1,8 +1,14 @@
 import React from 'react'
+import Header from '../components/Header'
 
 function NewBeer() {
   return (
-    <div>NewBeer</div>
+
+
+    <div>
+    <Header/>
+    <h2>NewBeer</h2>
+    </div>
   )
 }
 
