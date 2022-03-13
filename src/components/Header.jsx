@@ -1,11 +1,15 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import home from "../assets/home-icon.png"
 
 function Header() {
   return (
-    <div>
+    <div className='header'>
     
-    <Link to={"/"} ><h2>Home</h2></Link>
+    <div className='homeLink'>
+    <Link to={"/"} ><img src={home} alt="Home-Icon" width="50px"/></Link>  
+    </div>
+    
     
     </div>
   )
