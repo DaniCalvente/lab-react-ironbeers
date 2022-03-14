@@ -9,11 +9,16 @@ function ListBeers() {
   // 1. Crear el estado que manejara la info
   const [beers, setBeers] = useState(null);
   const [fetching, setFetching] = useState(true);
+  const [search, setSearch] = useState("")
 
   // 2. el useEffect que llamara el component didMount
   useEffect(() => {
     getBeers();
   }, []);
+
+  useEffect(()=>{
+    getSearch()
+  }, [search])
 
   // 3. Funcion que va a llamar la data de la API
   const getBeers = async () => {
@@ -24,6 +29,18 @@ function ListBeers() {
     setBeers(response.data);
     setFetching(false);
   };
+
+  const getSearch = async () => {
+   
+    const response = await axios.get(`https://ih-beers-api2.herokuapp.com/beers/search?q=${search}`)
+    console.log(response.data)
+    setBeers(response.data)
+ 
+}
+
+const handleChange = (event) => {    
+  setSearch(event.target.value)      
+}
 
   if (fetching) {
     return (
@@ -37,6 +54,13 @@ function ListBeers() {
     <div>
       <Header />
       <h2>All Beers</h2>
+
+      <div>
+        <form className="searchForm">
+            <label htmlFor="search">Search a Beer</label>
+            <input type="text" name="search" className="inputStyle" value={search} onChange={handleChange} />
+        </form>
+      </div>
 
       {beers.map((eachBeer) => {
         return (

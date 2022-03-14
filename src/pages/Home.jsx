@@ -10,17 +10,17 @@ function Home() {
       <div>
         <img src={beers} alt="All-Beers" />
         <br />
-        <Link to={"/beers"}>All Beers</Link>
+        <Link to={"/beers"}><h2>All Beers</h2></Link>
       </div>
       <div>
         <img src={random} alt="Random-Beer" />
         <br />
-        <Link to={"/random-beer"}>Random Beer</Link>
+        <Link to={"/random-beer"}><h2>Random Beer</h2></Link>
       </div>
       <div>
         <img src={newBeer} alt="New-Beer" />
         <br />
-        <Link to={"/new-beer"}>New Beer</Link>
+        <Link to={"/new-beer"}><h2>New Beer</h2></Link>
       </div>
     </div>
   );
